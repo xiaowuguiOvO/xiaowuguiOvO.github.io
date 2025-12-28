@@ -8,7 +8,7 @@ pub_post:       'Under review'
 pub_date:       "2025"
 abstract: >-
   Using Dual-Level Visual-Geometric Contrasts to Disambiguate Depth-Aware Visual Floorplan Localization.
-cover:          /assets/images/empty_300x200.png
+cover:          /assets/images/covers/disco_loc.png
 authors:
   - Shiyong Meng
   - Tao Zou
