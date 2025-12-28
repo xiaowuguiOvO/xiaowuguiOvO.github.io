@@ -26,8 +26,13 @@ education:
   - name: Central South University
     dept: School of Computer Science and Engineering
     position: Master's Student
-    date: 2024 - Present
+    date: 2025 - Present
     logo: /assets/images/csu_logo.png
+  - name: Tiangong University
+    dept: School of Computer Science and Technology
+    position: Undergraduate Student
+    date: 2021 - 2025
+    logo: /assets/images/tgu_logo.png
 # - name: ...
 
 awards: []
