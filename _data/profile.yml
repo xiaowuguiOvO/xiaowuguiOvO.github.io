@@ -19,10 +19,15 @@ short_bio_text_justify: false
 short_bio: >-
   <p></p>
 
-# portrait_url: /assets/images/photos/portrait.jpg
-portrait_caption: ""
+portrait_url: /assets/images/xiaowugui.png
+portrait_caption: "Shiyong Meng"
 
-education: []
+education:
+  - name: Central South University
+    dept: School of Computer Science and Engineering
+    position: Master's Student
+    date: 2024 - Present
+    logo: /assets/images/csu_logo.png
 # - name: ...
 
 awards: []
