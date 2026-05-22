@@ -15,6 +15,7 @@ authors:
   - Sihan Feng
   - Xuan Xiao
   - Shiyong Meng*
+author_note: "(* corresponding author)"
 links:
   PDF: "#" 
 ---
