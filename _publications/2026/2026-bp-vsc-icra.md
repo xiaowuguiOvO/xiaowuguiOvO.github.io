@@ -14,7 +14,7 @@ authors:
   - Honglu Xu
   - Gen Chen
   - Jianming Wang
-  - Xuan Xiao#
+  - Xuan Xiao*
 links:
   PDF: "/assets/pdfs/2026-bp-vsc-icra.pdf"
 ---

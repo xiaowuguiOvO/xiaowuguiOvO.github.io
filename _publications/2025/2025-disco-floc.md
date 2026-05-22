@@ -12,7 +12,7 @@ cover:          /assets/images/covers/disco_loc.png
 authors:
   - Ping Zhong
   - Shiyong Meng
-  - Bolei Chen#
+  - Bolei Chen*
   - Tao Zou
   - Chaoxu Mu
   - Jianxin Wang
