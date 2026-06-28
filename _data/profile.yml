@@ -33,6 +33,11 @@ education:
     position: Undergraduate Student
     date: 2021 - 2025
     logo: /assets/images/tgu_logo.png
+  - name: Nanning No.2 High School
+    dept: Nanning, Guangxi
+    position: High School Student
+    date: 
+    logo: /assets/images/nanning_no2_high_school_logo.png
 # - name: ...
 
 awards: []
