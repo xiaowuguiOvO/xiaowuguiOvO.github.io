@@ -1,0 +1,124 @@
+---
+layout: default
+title : Liquid Glass Demo
+navbar_title: Liquid Glass
+container_class: container-fluid px-0
+extra_css:
+  - /assets/css/liquid-glass.css
+---
+
+{% assign selected_publications = site.publications | sort: "date" | reverse | where: "selected", true %}
+
+<main class="liquid-glass-page">
+    <div class="liquid-flow" aria-hidden="true"></div>
+
+    <section class="liquid-hero">
+        <div class="liquid-shell">
+            <div class="liquid-profile glass-surface">
+                <div class="profile-portrait-wrap">
+                    <img src="{{ site.data.profile.portrait_url | relative_url }}" alt="{{ site.data.profile.primary_name }}" class="profile-portrait">
+                </div>
+                <div class="profile-copy">
+                    <p class="liquid-kicker">Robotics / VLA / VLN</p>
+                    <h1>{{ site.data.profile.primary_name }}</h1>
+                    <div class="profile-positions">
+                        {% for position in site.data.profile.positions %}
+                        <span>{{ position.name }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="profile-bio">
+                        {{ site.data.profile.short_bio }}
+                    </div>
+                    <div class="profile-actions">
+                        <a href="mailto:{{ site.data.profile.email | encode_email }}" class="glass-button"><i class="fas fa-at"></i> Email</a>
+                        {% if site.data.profile.github %}
+                        <a href="https://github.com/{{ site.data.profile.github }}" target="_blank" class="glass-button"><i class="fab fa-github"></i> GitHub</a>
+                        {% endif %}
+                        <a href="{{ '/publications' | relative_url }}" class="glass-button"><i class="fas fa-book-open"></i> Publications</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="liquid-section">
+        <div class="liquid-shell liquid-grid">
+            <div class="glass-surface education-panel">
+                <div class="section-heading">
+                    <span>Education</span>
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="education-list">
+                    {% for item in site.data.profile.education %}
+                    <article class="education-item">
+                        <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" class="education-logo">
+                        <div>
+                            <h2>{{ item.name }}</h2>
+                            <p>{{ item.dept }}</p>
+                            <div class="education-meta">
+                                <span>{{ item.position }}</span>
+                                <em>{{ item.date }}</em>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="glass-surface focus-panel">
+                <div class="section-heading">
+                    <span>Focus</span>
+                    <i class="fas fa-compass"></i>
+                </div>
+                <div class="focus-tags">
+                    <span>Robotics</span>
+                    <span>Embodied Intelligence</span>
+                    <span>Vision-Language-Action</span>
+                    <span>Vision-and-Language Navigation</span>
+                    <span>Snake Robots</span>
+                    <span>Floorplan Localization</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="liquid-section publications-section">
+        <div class="liquid-shell">
+            <div class="section-heading section-heading-wide">
+                <span>Selected Publications</span>
+                <a href="{{ '/publications' | relative_url }}">View all <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="publication-stack">
+                {% for item in selected_publications %}
+                <article class="glass-surface publication-glass-card">
+                    <div class="publication-cover">
+                        {% if item.cover %}
+                        <img src="{{ item.cover | relative_url }}" alt="{{ item.title }}">
+                        {% else %}
+                        <svg class="bubble-visual-hash" data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200"></svg>
+                        {% endif %}
+                    </div>
+                    <div class="publication-copy">
+                        <h2>{{ item.title }}</h2>
+                        <p class="publication-authors">{% include widgets/author_list.html authors=item.authors %}{% if item.author_note %} {{ item.author_note }}{% endif %}</p>
+                        <p class="publication-venue">{{ item.pub_pre }}<i>{{ item.pub }}</i>{% if item.pub_post %} {{ item.pub_post }}{% endif %}{% if item.pub_date %} {{ item.pub_date }}{% endif %}{% if item.pub_last %} {{ item.pub_last }}{% endif %}</p>
+                        <p class="publication-abstract">{{ item.abstract }}</p>
+                        {% if item.links %}
+                        <div class="publication-links">
+                            {% for link in item.links %}
+                            {% if link[1].url %}
+                            <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">{{ link[0] }}</a>
+                            {% else %}
+                            <a target="_blank" href="{{ link[1] }}">{{ link[0] }}</a>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
